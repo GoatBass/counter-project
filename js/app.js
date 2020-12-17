@@ -2,6 +2,7 @@
 
 //Contador a incrementar y disminuir
 let counter = 0;
+let counterSelector = document.querySelector("#counter");
 
 //Boton de incrementar assignado
 let plusNum = document.querySelector(".nextBtn");
@@ -12,12 +13,24 @@ let minusNum = document.querySelector(".prevBtn");
 //en el selector con id counter
 plusNum.addEventListener("click", function () {
   counter++;
-  document.querySelector("#counter").innerHTML = counter.toString();
+  counterSelector.innerHTML = counter.toString();
+  colorNum();
 });
 
 //Event listener al hacer click, nos disminuye el contador y luyego lo printa
 //en el selector con id counter
 minusNum.addEventListener("click", function () {
   counter--;
-  document.querySelector("#counter").innerHTML = counter.toString();
+  counterSelector.innerHTML = counter.toString();
+  colorNum();
 });
+
+function colorNum() {
+  if (counter < 0) {
+    counterSelector.style.color = "red";
+  } else if (counter === 0) {
+    counterSelector.style.color = "#333333";
+  } else {
+    counterSelector.style.color = "green";
+  }
+}
