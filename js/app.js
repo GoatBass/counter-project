@@ -25,6 +25,7 @@ minusNum.addEventListener("click", function () {
   colorNum();
 });
 
+//we check the condition for the value to know what color to print it with
 function colorNum() {
   if (counter < 0) {
     counterSelector.style.color = "red";
