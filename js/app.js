@@ -4,23 +4,29 @@
 let counter = 0;
 let counterSelector = document.querySelector("#counter");
 
-//Boton de incrementar assignado
+//Button to plus counter
 let plusNum = document.querySelector(".nextBtn");
-//Boton de disminuir assignado
+//Button to rest counter
 let minusNum = document.querySelector(".prevBtn");
+//Button of reset counter
+let resNum = document.querySelector(" .resBtn ");
 
-//Event listener al hacer click, nos aumenta el contador y luyego lo printa
-//en el selector con id counter
+//Event listener to upgrade counter
 plusNum.addEventListener("click", function () {
   counter++;
   counterSelector.innerHTML = counter.toString();
   colorNum();
 });
 
-//Event listener al hacer click, nos disminuye el contador y luyego lo printa
-//en el selector con id counter
+//Event listener to decrease number
 minusNum.addEventListener("click", function () {
   counter--;
+  counterSelector.innerHTML = counter.toString();
+  colorNum();
+});
+//Event listener to reset the counter
+resNum.addEventListener("click", function () {
+  counter = 0;
   counterSelector.innerHTML = counter.toString();
   colorNum();
 });
